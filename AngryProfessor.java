@@ -13,7 +13,7 @@ public class AngryProfessor {
 
         ArrayList<Integer> al = new ArrayList<>();
 
-        for(int i = 0 ; i < testCase ;i++){
+        for(int i = 0 ; i < testCase ; i++){
             int numberOfStudents = scan.nextInt();
             int classThreshold = scan.nextInt();
             for(int j = 0 ; j < numberOfStudents ;j++){
