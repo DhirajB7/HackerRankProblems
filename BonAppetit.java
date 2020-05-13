@@ -14,7 +14,9 @@ public class BonAppetit {
 			al.add(scan.nextInt());
 		}
 		int actual = scan.nextInt();
+
 		scan.close();
+		
 		al.remove(index);
 		int calculated = (al.stream().mapToInt(a->a).sum())/2;
 		if(actual==calculated) {
