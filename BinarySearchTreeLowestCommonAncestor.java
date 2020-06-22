@@ -1,6 +1,7 @@
-package hackerrank;
-import java.util.Scanner;
-import java.util.Stack;
+/*package hackerrank;
+
+import java.util.*;
+import java.io.*;
 
 class Node {
     Node left;
@@ -13,40 +14,26 @@ class Node {
         right = null;
     }
 }
-public class TreeTopView {
-/* 
-    
-    class Node 
-    	int data;
-    	Node left;
-    	Node right;
-	*/
-	public static void topView(Node root) {
-		 Node node = root;
-		    Stack<Node> st = new Stack<Node>();
-		    while(node != null) {
-		        st.add(node);
-		        node = node.left;
-		    }
-		    
-		    while(!st.isEmpty()){
-		        Node value = st.pop();
-		        System.out.print(value.data + " ");
-		    }
-		    
-		    node = root.right; //root.left is done
-		    while(node != null){
-		    	st.add(node);
-		        node = node.right;
-		    }
-		    
-		    while(!st.isEmpty()){
-		        Node value = st.pop();
-		        System.out.print(value.data + " ");
-		    }
-      
-    }
+
+class BinarySearchTreeLowestCommonAncestor {
 	
+    //class Node 
+    //	int data;
+    //	Node left;
+    //	Node right;
+	
+	public static Node lca(Node root, int v1, int v2) {
+      	// Write your code here.
+		if(root.data > v1 && root.data > v2) {
+			return lca(root.left,v1,v2);
+		}
+		
+		if(root.data < v1 && root.data < v2) {
+			return lca(root.right,v1,v2);
+		}
+		
+		return root;
+    }
 	public static Node insert(Node root, int data) {
         if(root == null) {
             return new Node(data);
@@ -71,7 +58,11 @@ public class TreeTopView {
             int data = scan.nextInt();
             root = insert(root, data);
         }
+        int v1 = scan.nextInt();
+      	int v2 = scan.nextInt();
         scan.close();
-        topView(root);
+        Node ans = lca(root,v1,v2);
+        System.out.println(ans.data);
     }	
 }
+*/
