@@ -26,7 +26,7 @@ public class CircularArrayRotation {
         }
 
         for(int i = 0 ; i< numberOFRotations;i++){
-            int last = al.get(al.size()-1);
+            int last = al.get(len-1);
             al.remove(al.size()-1);
             al.add(0,last);
         }
