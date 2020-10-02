@@ -1,6 +1,6 @@
 package hackerrank;
 
-import java.util.LinkedHashMap;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Zolution {
@@ -8,33 +8,42 @@ public class Zolution {
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
-		
-		LinkedHashMap<Character, Integer> lsm = new LinkedHashMap<Character, Integer>();
-		
-		for(char i = 'a' ; i<= 'z' ;i++) {
-			lsm.put(i,scan.nextInt());
+
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+
+		int lc = scan.nextInt();
+
+		for (int i = 0; i < lc; i++) {
+			pq.add(scan.nextInt());
 		}
-		
-		scan.nextLine();
-		
-		String data = scan.nextLine();
-		
+
 		scan.close();
-		
+
+		int minValue = pq.poll();
+
+		int count = 1;
+
 		int max = 0;
-		
-		int dataLen = data.length();
-		
-		for(int i = 0 ; i< dataLen;i++) {
-			
-			int charLen = lsm.get(data.charAt(i));
-			
-			if(charLen > max) {
-				max = charLen;
+
+		for (int i = 0; i < lc - 1; i++) {
+
+			int number = pq.poll();
+
+			if (number - minValue < 2) {
+
+				count++;
+
+			} else {
+
+				count = 1;
+				minValue = number;
+
 			}
+			max = Math.max(max, count);
 		}
-		
-		System.out.println(max * dataLen);
+
+		System.out.println(max);
+
 	}
 
 }

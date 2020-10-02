@@ -1,28 +1,32 @@
 package hackerrank;
 
-import java.util.Collections;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class TheHurdleRace {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 
-        int lc = scan.nextInt();
+		int lc = scan.nextInt();
 
-        int maxJump = scan.nextInt();
+		int k = scan.nextInt();
 
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+		int max = 0;
 
-        for(int i = 0 ; i < lc ;i++){
-            pq.add(scan.nextInt());
-        }
+		for (int i = 0; i < lc; i++) {
 
-        int maxJumpInDs = pq.poll();
+			int input = scan.nextInt();
 
-        System.out.println((maxJumpInDs > maxJump) ? maxJumpInDs-maxJump : 0);
+			if (input > max) {
+				max = input;
+			}
 
-    }
+		}
+
+		scan.close();
+
+		System.out.println(max > k ? max - k : 0);
+
+	}
 }

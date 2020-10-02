@@ -1,42 +1,48 @@
 package hackerrank;
 
-import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class PickingNumbers {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 
-        int lc = scan.nextInt();
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+		int lc = scan.nextInt();
 
-        for(int i = 0 ; i < lc;i++){
-            pq.add(scan.nextInt());
-        }
+		for (int i = 0; i < lc; i++) {
+			pq.add(scan.nextInt());
+		}
 
-        scan.close();
+		scan.close();
 
-        int count = 0;
-        int answer = 0;
-        int firstValue = pq.peek();
-        for(int i = 0 ; i < lc ; i++){
-            int a = pq.poll();
-            if(a-firstValue<=1){
-                count++;
-                answer = Math.max(answer,count);
-            }else{
-                firstValue = a;
-                answer = Math.max(answer,count);
-                count=1;
-            }
+		int minValue = pq.poll();
 
-        }
+		int count = 1;
 
-        System.out.println(answer);
+		int max = 0;
 
-    }
+		for (int i = 0; i < lc - 1; i++) {
+
+			int number = pq.poll();
+
+			if (number - minValue < 2) {
+
+				count++;
+
+			} else {
+
+				count = 1;
+				minValue = number;
+
+			}
+			max = Math.max(max, count);
+		}
+
+		System.out.println(max);
+
+	}
 }
