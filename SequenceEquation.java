@@ -1,43 +1,29 @@
 package hackerrank;
 
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SequenceEquation {
 
 	public static void main(String[] args) {
-		
-		LinkedHashMap<Integer, Integer> map = new LinkedHashMap<Integer, Integer>();
-		
+
 		Scanner scan = new Scanner(System.in);
 		
 		int lc = scan.nextInt();
 		
-		int value = 1;
+		ArrayList<Integer> al = new ArrayList<Integer>();
 		
-		for(int i = 0 ; i < lc ;i++) {
-			
-			map.put(scan.nextInt(), value);
-			value++;
-			
+		for(int i = 0 ; i < lc ; i++) {
+			al.add(scan.nextInt());
 		}
 		
 		scan.close();
 		
-		int question = 1;
-		
-		for(int i = 0 ; i < map.size() ;i++ ) {
+		for(int i = 1 ; i <= lc ;i ++) {
 			
-			int firstGet = map.get(question);
+			System.out.println(al.indexOf(al.indexOf(i)+1)+1);
 			
-			int answer = map.get(firstGet);
-			
-			System.out.println(answer);
-			
-			question++;
 		}
-
-		
 
 	}
 

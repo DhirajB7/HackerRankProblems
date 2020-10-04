@@ -18,6 +18,8 @@ public class CutTheSticks {
         for(int i = 0 ; i < len;i++){
             al.add(scan.nextInt());
         }
+        
+        scan.close();
 
         while(al.size()>0){
             System.out.println(al.size());

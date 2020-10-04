@@ -5,29 +5,36 @@ import java.util.Scanner;
 public class FindDigits {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+
 		Scanner scan = new Scanner(System.in);
-		
+
 		int lc = scan.nextInt();
-		
+
 		for (int i = 0; i < lc; i++) {
 			
-			String value = scan.next();
+			int number = scan.nextInt();
 			
-			int count = 0;
+			String numString = String.valueOf(number);
 			
-			for(String a : value.split("")) {
-				if(Integer.valueOf(a)==0) {
-					continue;
+			int answer = 0 ;
+			
+			for(int j = 0 ; j < numString.length();j++) {
+				
+				int divisor = Integer.valueOf(String.valueOf(numString.charAt(j)));
+				
+				if(divisor!=0) {
+					if(number%divisor==0) {
+						answer++;
+					}
 				}
-				if((Integer.valueOf(value)%Integer.valueOf(a))==0) {
-					count++;
-				}
+				
 			}
-			System.out.println(count);
 			
+			System.out.println(answer);
+
 		}
+		
+		scan.close();
 
 	}
 
