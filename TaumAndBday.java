@@ -21,6 +21,7 @@ public class TaumAndBday {
             long wc = scan.nextInt();
 
             int z = scan.nextInt();
+            
 
             if( wc+z < bc || bc+z < wc){
 
@@ -34,6 +35,8 @@ public class TaumAndBday {
             }
 
         }
+        
+        scan.close();
 
     }
 }

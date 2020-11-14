@@ -19,6 +19,8 @@ public class LibraryFine {
         int expectedMonth = scan.nextInt();
 
         int expectedYear = scan.nextInt();
+        
+        scan.close();
 
         int cost = 0;
 
