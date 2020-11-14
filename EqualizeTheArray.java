@@ -1,8 +1,7 @@
 package hackerrank;
 
-import java.util.Map.Entry;
+import java.util.HashMap;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class EqualizeTheArray {
 
@@ -10,37 +9,30 @@ public class EqualizeTheArray {
 
 		Scanner scan = new Scanner(System.in);
 
-		TreeMap<Integer, Integer> tMap = new TreeMap<Integer, Integer>();
-		TreeMap<Integer, Integer> answerMap = new TreeMap<Integer, Integer>();
-
 		int lc = scan.nextInt();
+
+		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
 
 		for (int i = 0; i < lc; i++) {
 
-			int key = scan.nextInt();
+			int number = scan.nextInt();
 
-			int value = 1;
-
-			if (tMap.containsKey(key)) {
-				value = tMap.get(key) + 1;
+			if (hm.containsKey(number)) {
+				int value = hm.get(number) + 1;
+				hm.put(number, value);
+			} else {
+				hm.put(number, 1);
 			}
 
-			tMap.put(key, value);
 		}
 
 		scan.close();
 
-		for (Entry<Integer, Integer> a : tMap.entrySet()) {
+		int sum = hm.values().stream().mapToInt(a -> a).sum();
 
-			int value = a.getKey();
+		int max = hm.values().stream().mapToInt(a -> a).max().getAsInt();
 
-			int key = a.getValue();
-
-			answerMap.put(key, value);
-
-		}
-
-		System.out.println(lc - answerMap.lastKey());
+		System.out.println(sum - max);
 
 	}
 

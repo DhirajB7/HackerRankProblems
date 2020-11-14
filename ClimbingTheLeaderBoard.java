@@ -38,7 +38,6 @@ public class ClimbingTheLeaderBoard {
                 System.out.println(lhm.get(num));
             }else{
                 if(ts.higher(num)!=null){
-                   // System.out.println(num+" "+ts.higher(num));
                     System.out.println(lhm.get(ts.higher(num)));
                 }else{
                     System.out.println(lhm.size()+1);

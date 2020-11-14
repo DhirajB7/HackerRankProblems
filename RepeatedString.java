@@ -13,6 +13,8 @@ public class RepeatedString {
 		
 		long n = scan.nextLong();  //number
 		
+		scan.close();
+		
 		long lenS = s.length(); //len s
 		
 		long a = s.replaceAll("[b-z]", "").length();// number of a in s

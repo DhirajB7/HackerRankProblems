@@ -1,6 +1,7 @@
 package hackerrank;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class BeautifulTriplets {
@@ -8,27 +9,28 @@ public class BeautifulTriplets {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-		
+
 		int lc = scan.nextInt();
 		
-		int diff = scan.nextInt();
+		int d = scan.nextInt();
 		
-		ArrayList<Integer> al = new ArrayList<Integer>();
+		Queue<Integer> queue = new LinkedList<Integer>();
 		
-		for(int i = 0 ; i < lc ;i++) {
-			al.add(scan.nextInt());
+		for(int i = 0 ; i < lc ; i++) {
+			queue.add(scan.nextInt());
 		}
+		
+		scan.close();
+		
 		
 		int count = 0;
 		
-		for(Integer a : al) {
+		for(int i = 0 ; i < lc; i ++) {
 			
-			if(al.contains(a+diff)) {
-				
-				if(al.contains(a+diff+diff)) {
-					count++;
-				}
-				
+			int number = queue.poll();
+			
+			if (queue.contains(number+d) && queue.contains(number+d+d)) {
+				count++;
 			}
 			
 		}

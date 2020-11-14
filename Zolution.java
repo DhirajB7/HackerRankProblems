@@ -1,10 +1,8 @@
 package hackerrank;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Zolution {
 
@@ -13,34 +11,31 @@ public class Zolution {
 		Scanner scan = new Scanner(System.in);
 
 		int lc = scan.nextInt();
-
-		List<Integer> pq = new ArrayList<Integer>();
 		
-		for(int i = 0 ; i < lc ;i ++) {
-			pq.add(scan.nextInt());
+		int d = scan.nextInt();
+		
+		Queue<Integer> queue = new LinkedList<Integer>();
+		
+		for(int i = 0 ; i < lc ; i++) {
+			queue.add(scan.nextInt());
 		}
 		
 		scan.close();
 		
-		Collections.sort(pq);
 		
-		int iter = pq.size(); 
-				
-		int len = Integer.MAX_VALUE;
+		int count = 0;
 		
-		System.out.println(iter);
-		
-		for( int i = 0 ; i < iter;i++) {
-			int small = pq.get(0);
-			pq = pq.stream().map(a->a-small).filter(a->a > 0).collect(Collectors.toList());
-			len = pq.size();
-			if(len==0) {
-				break;
-			}else {
-				System.out.println(len);
+		for(int i = 0 ; i < lc; i ++) {
+			
+			int number = queue.poll();
+			
+			if (queue.contains(number+d) && queue.contains(number+d+d)) {
+				count++;
 			}
+			
 		}
+		
+		System.out.println(count);
 
 	}
-
 }
