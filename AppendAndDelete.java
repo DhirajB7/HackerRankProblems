@@ -14,6 +14,8 @@ public class AppendAndDelete {
 		String t = scan.nextLine();
 
 		int k = scan.nextInt();
+		
+		scan.close();
 
 		int count = 0;
 		int lenDel = 0;

@@ -1,7 +1,5 @@
 package hackerrank;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Zolution {
@@ -10,32 +8,35 @@ public class Zolution {
 
 		Scanner scan = new Scanner(System.in);
 
-		int lc = scan.nextInt();
-		
-		int d = scan.nextInt();
-		
-		Queue<Integer> queue = new LinkedList<Integer>();
-		
-		for(int i = 0 ; i < lc ; i++) {
-			queue.add(scan.nextInt());
-		}
-		
-		scan.close();
-		
-		
-		int count = 0;
-		
-		for(int i = 0 ; i < lc; i ++) {
-			
-			int number = queue.poll();
-			
-			if (queue.contains(number+d) && queue.contains(number+d+d)) {
-				count++;
+		int count = scan.nextInt();
+
+		int[][] matrix = new int[count][count];
+
+		for (int i = 0; i < count; i++) {
+			String ip = scan.next();
+			for (int j = 0; j < count; j++) {
+				matrix[i][j] = Integer.valueOf(String.valueOf(ip.charAt(j)));
 			}
-			
 		}
-		
-		System.out.println(count);
+
+		scan.close();
+
+		for (int i = 1; i < count - 1; i++) {
+			for (int j = 1; j < count - 1; j++) {
+				int value = matrix[i][j];
+				if (matrix[i - 1][j] < value && matrix[i + 1][j] < value && matrix[i][j - 1] < value
+						&& matrix[i][j + 1] < value) {
+					matrix[i][j] = 10;
+				}
+			}
+		}
+
+		for (int i = 0; i < count; i++) {
+			for (int j = 0; j < count; j++) {
+				System.out.print(matrix[i][j]==10 ? "X" : matrix[i][j]);
+			}
+			System.out.println("");
+		}
 
 	}
 }

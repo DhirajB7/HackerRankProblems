@@ -1,6 +1,5 @@
 package hackerrank;
 
-import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class StrangeCounter {
@@ -9,6 +8,7 @@ public class StrangeCounter {
 
         Scanner in = new Scanner(System.in);
         long t = in.nextLong();
+        in.close();
         long n = 2;
         while (3 * (n - 1) < t){
             n = 2 * n;
