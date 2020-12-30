@@ -39,5 +39,6 @@ public class Contacts {
 
         }
 
+        scan.close();
     }
 }

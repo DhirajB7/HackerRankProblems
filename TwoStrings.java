@@ -14,8 +14,6 @@ public class TwoStrings {
 		
 		int lc = scan.nextInt();
 		
-		
-		
 		for(int i = 0 ; i < lc ; i++) {
 			
 			Set<String> one = Arrays.stream(scan.next().split("")).collect(Collectors.toSet());
@@ -31,7 +29,7 @@ public class TwoStrings {
 			
 		}
 		
-		
+		scan.close();
 
 	}
 

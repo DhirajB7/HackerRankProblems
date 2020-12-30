@@ -1,6 +1,5 @@
 package hackerrank;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Encryption {
@@ -10,7 +9,8 @@ public class Encryption {
         Scanner scan = new Scanner(System.in);
 
         String data = scan.nextLine().replaceAll("[ ]*","");
-
+        
+        scan.close();
 
         int length = data.length();
 

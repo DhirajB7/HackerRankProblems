@@ -11,6 +11,8 @@ public class CamelCase {
 		
 		String ip = scan.next();
 		
+		scan.close();
+		
 		ip = ip.replaceAll("[a-z]+", "");
 		
 		System.out.println(ip.length()+1);

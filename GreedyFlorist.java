@@ -13,6 +13,8 @@ public class GreedyFlorist {
         long numberOfFlowers = scan.nextLong();
 
         long numberOfFriends = scan.nextLong();
+        
+        scan.close();
 
         ArrayList<Long> al = new ArrayList<>();
 

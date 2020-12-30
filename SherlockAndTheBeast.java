@@ -33,6 +33,8 @@ public class SherlockAndTheBeast {
 				System.out.println(numberInWord.length()==0 ? "-1" : numberInWord);
 			}
 		}
+		
+		scan.close();
 	}
 
 }

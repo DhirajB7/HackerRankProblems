@@ -20,6 +20,8 @@ public class CircularArrayRotation {
         for(int i = 0 ; i < len ; i++){
             al.add(scan.nextInt());
         }
+        
+        scan.close();
 
         if(numberOFRotations>len){
             numberOFRotations = numberOFRotations%len;

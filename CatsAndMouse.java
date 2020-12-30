@@ -31,7 +31,8 @@ public class CatsAndMouse {
             }
         }
 
-
+       scan.close();
+        
     }
 
 }

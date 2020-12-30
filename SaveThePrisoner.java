@@ -21,6 +21,6 @@ public class SaveThePrisoner {
             System.out.println(((m+s-2)%n)+1);
 
         }
-
+        scan.close();
     }
 }

@@ -9,6 +9,8 @@ public class SuperReducedString {
 		Scanner scan = new Scanner(System.in);
 
 		String ip = scan.next();
+		
+		scan.close();
 
 		String oip = "";
 

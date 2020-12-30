@@ -51,6 +51,8 @@ public class RansomeNote {
 		}
 		
 		System.out.println(ans);
+		
+		scan.close();
 
 	}
 

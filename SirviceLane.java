@@ -30,5 +30,6 @@ public class SirviceLane {
         }
 
 
+        scan.close();
     }
 }

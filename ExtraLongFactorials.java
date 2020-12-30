@@ -10,6 +10,8 @@ public class ExtraLongFactorials {
         Scanner scan = new Scanner(System.in);
 
         int input = scan.nextInt();
+        
+        scan.close();
 
         BigInteger answer = new BigInteger("1");
 

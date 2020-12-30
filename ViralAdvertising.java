@@ -12,6 +12,8 @@ public class ViralAdvertising {
         ArrayList<Integer> al = new ArrayList<>();
 
         int input = scan.nextInt();
+        
+        scan.close();
 
         al.add(2);
 

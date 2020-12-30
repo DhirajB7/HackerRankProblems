@@ -27,6 +27,8 @@ public class GridChallenge {
 				Arrays.sort(data);
 				al.add(String.valueOf(data));
 			}
+			
+			scan.close();
 
 			for (int j = 0; j < al.get(0).length(); j++) {
 

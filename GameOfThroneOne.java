@@ -11,6 +11,8 @@ public class GameOfThroneOne {
 
 		String data = scan.nextLine();
 		
+		scan.close();
+		
 		HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
 		
 		for(Character a : data.toCharArray()) {

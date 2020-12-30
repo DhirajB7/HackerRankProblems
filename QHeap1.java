@@ -29,6 +29,7 @@ public class QHeap1 {
                 System.out.println(pq.peek());
             }
         }
-
+        
+        scan.next();
     }
 }

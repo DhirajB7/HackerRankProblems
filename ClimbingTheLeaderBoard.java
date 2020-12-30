@@ -32,6 +32,8 @@ public class ClimbingTheLeaderBoard {
         for(long i = 0 ; i < aLc ; i++){
             al.add(scan.nextLong());
         }
+        
+        scan.close();
 
         for(Long num : al){
             if(ts.contains(num)){
