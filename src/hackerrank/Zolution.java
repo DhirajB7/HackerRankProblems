@@ -1,5 +1,7 @@
 package hackerrank;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -8,14 +10,10 @@ import java.util.Scanner;
 public class Zolution {
 
   public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
 
-	System.out.println("ENTER NAME HERE");
-
-    String name = scan.nextLine();
-
-    System.out.println("Hello " + name);
-
-    scan.close();
+	  Calendar c = Calendar.getInstance();
+	  c.set(2021, 4, 9);
+	  int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+	  System.out.println(dayOfWeek);
   }
 }

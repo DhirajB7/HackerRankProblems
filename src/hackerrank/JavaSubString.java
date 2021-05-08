@@ -14,6 +14,8 @@ public class JavaSubString {
 		
 		int end = scan.nextInt();
 		
+		scan.close();
+		
 		System.out.println(data.substring(start, end));
 		
 	}
